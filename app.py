@@ -27,7 +27,7 @@ st.title('Mentor call QA')
 st.subheader("Upload your audio file (MP3 format):")
 
 # File upload widget
-audio_file = st.file_uploader("Choose an audio file", type=["mp3"])
+audio_file = st.file_uploader("Choose an audio file", type=["mp3", "acc", "wav", "m4a", "flac", "ogg", "opus", "webm", "wma"])
 
 temp_dir = "temp"
 os.makedirs(temp_dir, exist_ok=True)
