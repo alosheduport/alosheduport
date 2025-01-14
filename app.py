@@ -23,11 +23,14 @@ checklist = [
 ]
 
 # Streamlit UI components
-st.title('Audio Transcript and Call Evaluation')
-st.subheader("Upload your audio file (MP3 format) for transcription and evaluation:")
+st.title('Mentor call QA')
+st.subheader("Upload your audio file (MP3 format):")
 
 # File upload widget
 audio_file = st.file_uploader("Choose an audio file", type=["mp3"])
+
+temp_dir = "temp"
+os.makedirs(temp_dir, exist_ok=True)
 
 if audio_file:
     st.write(f"Processing file: {audio_file.name}")
