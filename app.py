@@ -72,7 +72,7 @@ if audio_file:
             ratings.append(0)  # If rating is invalid, assign a default value
     
     # Calculate the average rating
-    average_rating = sum(ratings) / len(ratings) if ratings else 0
+    average_rating = round(sum(ratings) / len(ratings), 1) if ratings else 0
     
     # Display ratings
     st.subheader("Call Evaluation:")
