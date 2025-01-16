@@ -86,7 +86,7 @@ if audio_file:
     emotions_response = itsus.generate_content(emotions_prompt)
     
     st.subheader("Call Quality (Emotions and Nature):")
-    st.text_area("Evaluation", emotions_response.text, height=150)
+    st.markdown(emotions_response.text)
     
     # Option to download the transcript and ratings files
     transcript_filename = os.path.splitext(audio_file.name)[0] + "_transcript.txt"
