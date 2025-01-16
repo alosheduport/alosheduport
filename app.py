@@ -4,14 +4,14 @@ import google.generativeai as genai
 from io import StringIO
 
 # Set your API key
-API_KEY = 'AIzaSyC0lHNZsII28Ayvgivo9rVJVkrFDAbW6MM'
+API_KEY = 'AIzaSyCoLceqDdeiOJNDAwwh16bJWKplNl3TihQ'
 genai.configure(api_key=API_KEY)
 
 # Define your generative models
 model = genai.GenerativeModel("gemini-exp-1206")
 itsus = genai.GenerativeModel("gemini-1.5-flash-8b")
 
-# Checklist to be checked
+# Expanded checklist with detailed items
 checklist = [
     "Intro", 
     "Continuation of previous call (catching up on stuff)", 
@@ -19,7 +19,13 @@ checklist = [
     "Parents connection: Dashboard activity",
     "Staying in-topic (not deviating from the main topic)",
     "Conclusion", 
-    "Rapport building"
+    "Rapport building",
+    "Know about the student: Academic status and personal details",
+    "App intro: Access to classes, daily tasks, homepage, exams",
+    "Sharing basic info: YouTube videos, doubt clearance, syllabus screenshot, data collection",
+    "Explain batch details: Orientation, commencement, scheduling, exams, live updates",
+    "Conditional suggestions based on student join date",
+    "Connect parent: Introduction, save number, student awareness, follow-up, working hours, reachout encouragement"
 ]
 
 # Streamlit UI components
@@ -54,7 +60,7 @@ if audio_file:
     # Evaluate the checklist using the itsus model
     ratings = []
     for item in checklist:
-        prompt = f"Rate the following on a scale of 1-5 based on the provided transcript: '{item} and return the rating as a number only'"
+        prompt = f"Rate the following on a scale of 1-5 based on the provided transcript: '{item}' and return the rating as a number only"
         response = itsus.generate_content(f"{prompt}\n\nTranscript: {transcription}")
         
         # Extract the rating from the response (assuming the response provides a number)
