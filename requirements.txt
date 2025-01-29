@@ -1,1 +1,8 @@
 google-generativeai
+shutil
+tempfile
+numpy
+opencv-python
+face-recognition
+scikit-learn
+imutils
