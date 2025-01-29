@@ -1,5 +1,4 @@
 google-generativeai
-tempfile
 numpy
 opencv-python
 face-recognition
