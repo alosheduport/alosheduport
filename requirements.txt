@@ -1,5 +1,4 @@
 google-generativeai
-shutil
 tempfile
 numpy
 opencv-python
